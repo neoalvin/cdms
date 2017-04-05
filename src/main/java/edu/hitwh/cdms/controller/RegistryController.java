@@ -60,6 +60,11 @@ public class RegistryController {
         return retCode;
       }
 
+      retCode = RegistryAccountValidator.checkAccountInfo(studentInfo);
+      if(!("0".equals(retCode.getCode()))){
+        LOGGER.error("[RegistryController]:  Registry account failed.retCode = " + retCode.toString());
+        return retCode;
+      }
       //对前台传入的密码进行加密
       studentInfo.setPwdCode(UserInfoUtil.EncoderByMd5(studentInfo.getPwdCode()));
 

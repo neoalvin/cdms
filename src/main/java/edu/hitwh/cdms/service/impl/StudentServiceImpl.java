@@ -1,7 +1,8 @@
-package edu.hitwh.cdms.service;
+package edu.hitwh.cdms.service.impl;
 
 import edu.hitwh.cdms.dao.StudentInfoDao;
 import edu.hitwh.cdms.model.StudentInfo;
+import edu.hitwh.cdms.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -13,7 +14,7 @@ import javax.annotation.Resource;
 @Service
 public class StudentServiceImpl implements StudentService {
   /**
-   * 定义学生信息数据库操作变量
+   * 定义学生信息数据库操作对象
    */
   @Resource
   private StudentInfoDao studentInfoDao;

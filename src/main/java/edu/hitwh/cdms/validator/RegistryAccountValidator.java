@@ -1,5 +1,7 @@
 package edu.hitwh.cdms.validator;
 
+import edu.hitwh.cdms.model.RetCode;
+import edu.hitwh.cdms.model.StudentInfo;
 import edu.hitwh.cdms.service.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,5 +26,15 @@ public class RegistryAccountValidator {
   public static boolean checkAccountExist(StudentService studentService, String userId){
     LOGGER.info("[RegistryAccountValidator]: Check account start, userId = " + userId);
     return null != studentService.selectStudentById(userId);
+  }
+
+  /**
+   * 校验用户信息格式
+   * @param studentInfo
+   * @return
+   */
+  public static RetCode checkAccountInfo(StudentInfo studentInfo){
+    RetCode retCode = new RetCode();
+    return retCode;
   }
 }

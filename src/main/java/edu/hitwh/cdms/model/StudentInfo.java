@@ -72,5 +72,14 @@ public class StudentInfo {
     this.pwdCode = pwdCode;
   }
 
-
+  @Override
+  public String toString() {
+    return "StudentInfo{" +
+        "studentId='" + studentId + '\'' +
+        ", studentName='" + studentName + '\'' +
+        ", studentEmail='" + studentEmail + '\'' +
+        ", studentPhone='" + studentPhone + '\'' +
+        ", pwdCode='" + pwdCode + '\'' +
+        '}';
+  }
 }
