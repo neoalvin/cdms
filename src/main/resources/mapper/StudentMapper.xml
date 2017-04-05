@@ -15,7 +15,7 @@
 		SELECT * FROM cdms_student_info WHERE student_id = #{studentId}
 	</select>
 	<!-- 插入单条记录 -->
-	<insert id="saveStudentInfo" parameterType="StudentInfo">
+	<insert id="addStudentInfo" parameterType="StudentInfo">
 		insert into cdms_student_info values(#{studentId},#{studentName},#{studentEmail},#{studentPhone},#{pwdCode})
 	</insert>
 </mapper>

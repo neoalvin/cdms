@@ -28,7 +28,7 @@ public class StudentInfo {
   private String studentPhone;
 
   /**
-   * 账号密码摘要
+   * 密码摘要
    */
   private String pwdCode;
 
@@ -72,14 +72,5 @@ public class StudentInfo {
     this.pwdCode = pwdCode;
   }
 
-  @Override
-  public String toString() {
-    return "StudentInfo{" +
-        "studentId='" + studentId + '\'' +
-        ", studentName='" + studentName + '\'' +
-        ", studentEmail='" + studentEmail + '\'' +
-        ", studentPhone='" + studentPhone + '\'' +
-        ", pwdCode='" + pwdCode + '\'' +
-        '}';
-  }
+
 }

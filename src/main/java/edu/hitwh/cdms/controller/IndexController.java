@@ -8,12 +8,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 
+/**
+ * 主页Controller类
+ */
 @Controller
-public class AppController {
+public class IndexController {
 
+  /**
+   * 学生信息Service类
+   */
   @Resource
   private StudentService studentService;
 
+  /**
+   * 获取主页页面视图
+   * @return
+   */
   @RequestMapping("/")
   public ModelAndView getIndex(){
     ModelAndView mav = new ModelAndView("index");
@@ -21,15 +31,5 @@ public class AppController {
     mav.addObject("studentInfo", studentInfo);
     return mav;
   }
-
-  @RequestMapping("/login")
-  public String getLogin() {
-	    return "login";
-    }
-
-  @RequestMapping("/registry")
-  public String getRegistry() {
-	    return "registry";
-    }
 
 }

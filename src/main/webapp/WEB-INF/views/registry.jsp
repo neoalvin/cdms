@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +8,9 @@
 	<title>注册-高校课程设计评分系统</title>
 	<link rel="stylesheet" type="text/css" href="static/registry.css">
 	<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+  <script type="application/javascript" src="js/jquery-3.2.0.min.js"></script>
+  <script type="application/javascript" src="js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="js/registryAccount.js"></script>
 </head>
 <body>
 	<!-- 页头开始 -->
@@ -19,7 +23,7 @@
 	<!-- 注册页面主要内容开始 -->
 	<div id="registryContent">
 		<div class="registryHeadLabel">用户注册</div>
-      	<form class="registryForm" action="RegistryAccount" method="post">
+      	<form class="registryForm" method="post">
       		<!-- 学号 -->
       		<label for="inputUserId" class="registryLabel">用户名<span>*</span></label>
 	        <input type="text" id="inputUserId" name="userId" class="form-control" placeholder="学号/工号" required autofocus>
@@ -28,10 +32,10 @@
 	        <input type="text" id="inputUsername" name="username" class="form-control" placeholder="真实姓名" required>
 	        <!-- 邮箱 -->
 	        <label for="inputUserEmail" class="registryLabel">邮箱</label>
-	        <input type="email" id="inputUserEmail" name="userEmail" class="form-control" placeholder="xxx@xxx.com">
+	        <input type="email" id="inputUserEmail" name="userEmail" class="form-control" placeholder="邮箱">
 					<!-- 真实姓名 -->
 					<label for="inputPhone" class="registryLabel">电话号码</label>
-					<input type="text" id="inputPhone" name="userPhone" class="form-control" placeholder="1846310xxxx">
+					<input type="text" id="inputPhone" name="userPhone" class="form-control" placeholder="电话号码">
 					<!-- 密码 -->
 	        <label for="inputPassword" class="registryLabel">密码<span>*</span></label>
 	        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="密码" required>

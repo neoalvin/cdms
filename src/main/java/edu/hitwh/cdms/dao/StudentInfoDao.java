@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentInfoDao {
     public StudentInfo selectStudentById(String studentId);
-    public StudentInfo saveStudentInfo(StudentInfo studentInfo);
+    public void addStudentInfo(StudentInfo studentInfo);
 }
