@@ -52,7 +52,7 @@ public class RegistryController {
     RetCode retCode = new RetCode();
 
     try {
-      //若传入参数为空，则注册失败
+      //若传入用户信息对象为空，则注册失败
       if(null == studentInfo){
         retCode.setCode("1");
         retCode.setMessage("User information is null.");
@@ -60,11 +60,13 @@ public class RegistryController {
         return retCode;
       }
 
+      //若传入必选参数为空，则注册失败
       retCode = RegistryAccountValidator.checkAccountInfo(studentInfo);
-      if(!("0".equals(retCode.getCode()))){
+      if("1".equals(retCode.getCode())){
         LOGGER.error("[RegistryController]:  Registry account failed.retCode = " + retCode.toString());
         return retCode;
       }
+
       //对前台传入的密码进行加密
       studentInfo.setPwdCode(UserInfoUtil.EncoderByMd5(studentInfo.getPwdCode()));
 

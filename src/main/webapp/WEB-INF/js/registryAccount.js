@@ -9,6 +9,11 @@ $(document).ready(
                 var userPhone = $("#inputPhone").val();
                 var password = $("#inputPassword").val();
 
+                //校验用户信息
+                if(!validateUserInfo()){
+                    return;
+                }
+
                 var data = {
                     "studentId": userId,
                     "studentName": username,
@@ -44,3 +49,28 @@ $(document).ready(
                 return false;
             });
     });
+
+/**
+ * 校验用户信息格式是否正确
+ * @returns {boolean}
+ */
+function validateUserInfo() {
+    //获取用户注册信息
+    var userId = $("#inputUserId").val();
+    var username = $("#inputUsername").val();
+    var password = $("#inputPassword").val();
+
+    if(isStringEmpty(userId)||isStringEmpty(username)||isStringEmpty(password)){
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 校验参数是否为空
+ * @param str
+ * @returns {boolean}
+ */
+function isStringEmpty(str){
+    return ("" === str) || (undefined === str);
+}

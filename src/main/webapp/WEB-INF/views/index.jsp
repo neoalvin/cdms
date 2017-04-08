@@ -3,9 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页-高校课程设计评分系统</title>
-<link rel="stylesheet" type="text/css" href="static/main.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>首页-高校课程设计评分系统</title>
+  <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/bootstrap-dialog.css">
+  <script type="application/javascript" src="js/jquery-3.2.0.min.js"></script>
+  <script type="application/javascript" src="js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="js/bootstrap-dialog.js"></script>
+	<script type="application/javascript" href="js/main.js"></script>
 </head>
 <body>
 	<!-- 页首个人信息模块开始 -->
@@ -14,13 +20,13 @@
 		<div class="profilePicture"><a href="#"><img src="images/alvin.jpg"></a></div>
 		<!-- 个人信息 -->
 		<div class="profileInfo">
-			<div class="profileName">Alvin</div>
-			<div class="profileNo">130420215</div>
+			<div class="profileName">${username}</div>
+			<div class="profileNo">${userId}</div>
 		</div>
 		<!-- 网站名称 -->
 		<!-- <div class="headTitle">高校课程设计评分系统</div> -->
 		<!-- 退出系统链接 -->
-		<div class="logoutLink"><a href="/login">退出系统</a></div>
+		<div class="logoutLink"><a href="/logout">退出系统</a></div>
 	</div>
 	<!-- 页首个人信息模块结束 -->
 	<!-- 页面主要内容开始 -->
@@ -37,11 +43,6 @@
 		<!-- 左侧导航栏结束 -->
 		<!-- 右侧主页面开始 -->
 		<div id="mainModule">右侧主页面模块
-			${studentInfo.studentId}<br>
-			${studentInfo.studentName}<br>
-			${studentInfo.studentPhone}<br>
-			${studentInfo.studentEmail}<br>
-			${studentInfo.pwdCode}
 		</div>
 		<!-- 右侧主页面结束 -->
 	</div>

@@ -4,10 +4,6 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
   <display-name>cdms</display-name>
-  <!-- 起始欢迎界面 -->
-  <welcome-file-list>
-    <welcome-file>login.jsp</welcome-file>
-  </welcome-file-list>
 
   <!-- 读取spring配置文件 -->
   <context-param>
@@ -81,6 +77,15 @@
     <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>login</welcome-file>
+  </welcome-file-list>
 
   <!-- 浏览器不支持put,delete等method,由该filter将/user?_method=delete转换为标准的http delete方法 -->
   <filter>

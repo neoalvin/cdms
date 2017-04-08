@@ -7,6 +7,11 @@
 	<title>登录-高校课程设计评分系统</title>
 	<link rel="stylesheet" type="text/css" href="static/login.css">
 	<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/bootstrap-dialog.css">
+	<script type="application/javascript" src="js/jquery-3.2.0.min.js"></script>
+	<script type="application/javascript" src="js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="js/bootstrap-dialog.js"></script>
+	<script type="application/javascript" src="js/loginAccount.js"></script>
 </head>
 <body>
 	<!-- 页头开始 -->
@@ -19,7 +24,7 @@
 	<!-- 登录页面主要内容开始 -->
 	<div id="loginContent">
 		<div class="loginHeadLabel">用户登录</div>
-      	<form class="loginForm" action="LoginAccount">
+      	<form class="loginForm" method="post">
       		<!-- 学号/工号 -->
       		<label for="inputUserId" class="loginLabel">用户名</label>
 	        <input type="text" id="inputUserId" name="userId" class="form-control" placeholder="学号/工号" required autofocus>

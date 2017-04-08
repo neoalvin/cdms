@@ -42,15 +42,16 @@ public class UserInfoUtil {
   }
 
   /**
-   * 通过用户名和密码校验用户
-   * @return
+   * 校验账号信息是否为空
+   * @param param
+   * @param retCode
    */
-  public static RetCode checkUserByIdAndPassword(UserInfo userInfo){
-    LOGGER.info("[UserInfoUtil]: Check user information start. userId= " + userInfo.getUserId());
-
-    //定义返回信息对象
-    RetCode retCode = new RetCode();
-
-    return retCode;
+  public static void checkAccountInfoEmpty(String info, RetCode retCode, String param) {
+    if (CommonUtil.isStringEmpty(info)) {
+      retCode.setCode("1");
+      retCode.setMessage(param + "不能为空。");
+      LOGGER.error("Check account info start, retCode " + retCode.toString());
+    }
   }
+
 }
