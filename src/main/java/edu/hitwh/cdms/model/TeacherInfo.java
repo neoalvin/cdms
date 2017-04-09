@@ -27,6 +27,11 @@ public class TeacherInfo {
   private String teacherPhone;
 
   /**
+   * 教师头像
+   */
+  private String teacherPicture;
+
+  /**
    * 教师密码摘要
    */
   private String pwdCode;
@@ -71,6 +76,14 @@ public class TeacherInfo {
     this.pwdCode = pwdCode;
   }
 
+  public String getTeacherPicture() {
+    return teacherPicture;
+  }
+
+  public void setTeacherPicture(String teacherPicture) {
+    this.teacherPicture = teacherPicture;
+  }
+
   @Override
   public String toString() {
     return "TeacherInfo{" +
@@ -78,6 +91,7 @@ public class TeacherInfo {
         ", teacherName='" + teacherName + '\'' +
         ", teacherEmail='" + teacherEmail + '\'' +
         ", teacherPhone='" + teacherPhone + '\'' +
+        ", teacherPicture='" + teacherPicture + '\'' +
         ", pwdCode='" + pwdCode + '\'' +
         '}';
   }

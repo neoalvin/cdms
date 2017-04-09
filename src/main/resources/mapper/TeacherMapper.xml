@@ -8,6 +8,7 @@
     <result column="teacher_name" property="teacherName" jdbcType="CHAR" />
     <result column="teacher_email" property="teacherEmail" jdbcType="CHAR" />
     <result column="teacher_phone" property="teacherPhone" jdbcType="CHAR" />
+    <result column="teacher_picture" property="teacherPicture" jdbcType="CHAR" />
     <result column="pwd_code" property="pwdCode" jdbcType="CHAR" />
   </resultMap>
   <!-- 查询单条记录 -->

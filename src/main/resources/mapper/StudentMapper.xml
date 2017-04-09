@@ -8,6 +8,7 @@
 		<result column="student_name" property="studentName" jdbcType="CHAR" />
 		<result column="student_email" property="studentEmail" jdbcType="CHAR" />
 		<result column="student_phone" property="studentPhone" jdbcType="CHAR" />
+		<result column="student_picture" property="studentPicture" jdbcType="CHAR" />
 		<result column="pwd_code" property="pwdCode" jdbcType="CHAR" />
 	</resultMap>
 	<!-- 查询单条记录 -->
@@ -16,6 +17,6 @@
 	</select>
 	<!-- 插入单条记录 -->
 	<insert id="addStudentInfo" parameterType="StudentInfo">
-		insert into cdms_student_info values(#{studentId},#{studentName},#{studentEmail},#{studentPhone},#{pwdCode})
+		insert into cdms_student_info values(#{studentId},#{studentName},#{studentEmail},#{studentPhone},#{studentPicture},#{pwdCode})
 	</insert>
 </mapper>

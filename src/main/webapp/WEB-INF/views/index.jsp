@@ -11,13 +11,13 @@
   <script type="application/javascript" src="js/jquery-3.2.0.min.js"></script>
   <script type="application/javascript" src="js/bootstrap.min.js"></script>
   <script type="application/javascript" src="js/bootstrap-dialog.js"></script>
-	<script type="application/javascript" href="js/main.js"></script>
+	<script type="application/javascript" src="js/main.js"></script>
 </head>
 <body>
 	<!-- 页首个人信息模块开始 -->
 	<div id="profileModule">
 		<!-- 个人头像 -->
-		<div class="profilePicture"><a href="#"><img src="images/alvin.jpg"></a></div>
+		<div class="profilePicture"><a href="#"><img src="${userPicture}"></a></div>
 		<!-- 个人信息 -->
 		<div class="profileInfo">
 			<div class="profileName">${username}</div>
@@ -26,7 +26,7 @@
 		<!-- 网站名称 -->
 		<!-- <div class="headTitle">高校课程设计评分系统</div> -->
 		<!-- 退出系统链接 -->
-		<div class="logoutLink"><a href="/logout">退出系统</a></div>
+		<div class="logoutLink"><a href="javascript:void(0)" onclick="logoutFromSystem()">退出系统</a></div>
 	</div>
 	<!-- 页首个人信息模块结束 -->
 	<!-- 页面主要内容开始 -->

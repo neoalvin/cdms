@@ -28,6 +28,11 @@ public class StudentInfo {
   private String studentPhone;
 
   /**
+   *
+   */
+  private String studentPicture;
+
+  /**
    * 密码摘要
    */
   private String pwdCode;
@@ -64,6 +69,14 @@ public class StudentInfo {
     this.studentPhone = studentPhone;
   }
 
+  public String getStudentPicture() {
+    return studentPicture;
+  }
+
+  public void setStudentPicture(String studentPicture) {
+    this.studentPicture = studentPicture;
+  }
+
   public String getPwdCode() {
     return pwdCode;
   }
@@ -79,6 +92,7 @@ public class StudentInfo {
         ", studentName='" + studentName + '\'' +
         ", studentEmail='" + studentEmail + '\'' +
         ", studentPhone='" + studentPhone + '\'' +
+        ", studentPicture='" + studentPicture + '\'' +
         ", pwdCode='" + pwdCode + '\'' +
         '}';
   }

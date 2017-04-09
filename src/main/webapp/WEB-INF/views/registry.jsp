@@ -8,8 +8,10 @@
 	<title>注册-高校课程设计评分系统</title>
 	<link rel="stylesheet" type="text/css" href="static/registry.css">
 	<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
-  <script type="application/javascript" src="js/jquery-3.2.0.min.js"></script>
-  <script type="application/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/bootstrap-dialog.css">
+	<script type="application/javascript" src="js/jquery-3.2.0.min.js"></script>
+	<script type="application/javascript" src="js/bootstrap.min.js"></script>
+	<script type="application/javascript" src="js/bootstrap-dialog.js"></script>
   <script type="application/javascript" src="js/registryAccount.js"></script>
 </head>
 <body>

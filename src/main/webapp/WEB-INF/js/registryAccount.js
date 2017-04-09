@@ -33,17 +33,48 @@ $(document).ready(
                     data: jsonData,
                     success: function (msg) {
                         if(msg.code === '0'){
-                            alert("注册成功！");
-                            window.location.href = '/login';
+                            BootstrapDialog.show({
+                                title: "提示",
+                                message: '注册成功!',
+                                closable: false,
+                                buttons : [{
+                                    label : "确认",
+                                    action : function(dialog){
+                                        window.location.href = '/login';
+                                        dialog.close();
+                                    }
+                                }]
+                            });
+
                         }
                         else{
-                            alert("注册失败：" + msg.message);
-                            window.location.reload();
+                            BootstrapDialog.show({
+                                title: "提示",
+                                message: '注册失败：' + msg.message,
+                                closable: false,
+                                buttons : [{
+                                    label : "确认",
+                                    action : function(dialog){
+                                        window.location.reload();
+                                        dialog.close();
+                                    }
+                                }]
+                            });
                         }
                     },
                     error: function (msg) {
-                        alert("用户注册发生错误：" + msg.message);
-                        window.location.reload();
+                        BootstrapDialog.show({
+                            title: "提示",
+                            message: '注册发生错误：' + msg.message,
+                            closable: false,
+                            buttons : [{
+                                label : "确认",
+                                action : function(dialog){
+                                    window.location.reload();
+                                    dialog.close();
+                                }
+                            }]
+                        });
                     }
                 });
                 return false;

@@ -29,14 +29,21 @@ import java.io.IOException;
 @Controller
 public class LoginController{
 
-  //学生信息数据操作类
+  /**
+   * 学生信息数据操作对象
+   */
   @Resource
   StudentService studentService;
 
+  /**
+   * 教师信息数据操作对象
+   */
   @Resource
   TeacherService teacherService;
 
-  //定义日志对象
+  /**
+   *  定义日志对象
+   */
   private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
   /**
@@ -58,6 +65,9 @@ public class LoginController{
     //定义返回信息对象
     RetCode retCode = new RetCode();
 
+    //获取session
+    HttpSession session = request.getSession();
+
     try {
       //校验传入用户信息对象是否为空
       if (null == userInfo) {
@@ -76,16 +86,14 @@ public class LoginController{
       //对用户明文密码进行加密
       userInfo.setPwdCode(UserInfoUtil.EncoderByMd5(userInfo.getPwdCode()));
 
+
+      //打印入参信息
       LOGGER.info("[LoginController]: Login account start, studentInfo = " + userInfo.toString());
 
-      //定义返回信息对象
-      retCode = LoginAccountValidator.checkUserByIdAndPassword(teacherService, studentService, userInfo);
+      //获取校验结果
+      retCode = LoginAccountValidator.checkUserByIdAndPassword(teacherService, studentService, userInfo, session);
 
       if("0".equals(retCode.getCode())){
-        //设置session中用户信息
-        HttpSession session = request.getSession();
-        session.setAttribute("userId", userInfo.getUserId());
-        session.setAttribute("username", retCode.getMessage());
         LOGGER.info("[LoginController]: Login account successfully. userId in session: " + session.getAttribute("userId"));
       }
       else{
@@ -93,7 +101,7 @@ public class LoginController{
       }
     }
     catch (Exception e){
-      LOGGER.info("[LoginController]: Exception occurs to login account. " + e.toString());
+      LOGGER.error("[LoginController]: Exception occurs to login account. " + e.toString());
       retCode.setCode("1");
       retCode.setMessage(e.toString());
     }

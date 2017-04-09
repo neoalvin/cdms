@@ -23,12 +23,21 @@ import javax.annotation.Resource;
 @Controller
 public class RegistryController {
 
-  //学生信息数据操作类
+  /**
+   * 定义学生信息数据操作对象
+   */
   @Resource
   private StudentService studentService;
 
-  //定义日志对象
+  /**
+   * 定义日志对象
+   */
   private static final Logger LOGGER = LoggerFactory.getLogger(RegistryController.class);
+
+  /**
+   * 默认头像路径
+   */
+  private static final String PICTURE_DEFAULT_PATH = "images/user/default.jpg";
 
   /**
    * 返回注册界面视图
@@ -55,7 +64,7 @@ public class RegistryController {
       //若传入用户信息对象为空，则注册失败
       if(null == studentInfo){
         retCode.setCode("1");
-        retCode.setMessage("User information is null.");
+        retCode.setMessage("用户信息不能为空！");
         LOGGER.error("[RegistryController]:  Registry account failed.retCode = " + retCode.toString());
         return retCode;
       }
@@ -75,11 +84,14 @@ public class RegistryController {
       //判断学生信息是否已存在
       if (RegistryAccountValidator.checkAccountExist(studentService, studentInfo.getStudentId())) {
         retCode.setCode("1");
-        retCode.setMessage("Account already exists.");
+        retCode.setMessage("用户已存在!");
         LOGGER.warn("[RegistryController]: Registry account failed.retCode = " + retCode.toString());
       }
+      //学生信息不存在
       else {
-        //学生信息不存在，则添加学生信息到数据库
+        //设置默认头像
+        studentInfo.setStudentPicture(PICTURE_DEFAULT_PATH);
+        //添加学生信息到数据库
         studentService.addStudentInfo(studentInfo);
         LOGGER.info("[RegistryController]: Registry account successfully.");
       }
