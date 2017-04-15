@@ -97,6 +97,7 @@ public class LoginAccountValidator {
         session.setAttribute("userId", userId);
         session.setAttribute("username",studentInfo.getStudentName());
         session.setAttribute("userPicture",studentInfo.getStudentPicture());
+        session.setAttribute("userType","学生");
       }
     }
     else if(TEACHER.equals(userType)){
@@ -116,6 +117,7 @@ public class LoginAccountValidator {
         session.setAttribute("userId", userId);
         session.setAttribute("username",teacherInfo.getTeacherName());
         session.setAttribute("userPicture",teacherInfo.getTeacherPicture());
+        session.setAttribute("userType","教师");
       }
     }
     return retCode;

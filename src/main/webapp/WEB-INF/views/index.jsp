@@ -17,7 +17,7 @@
 	<!-- 页首个人信息模块开始 -->
 	<div id="profileModule">
 		<!-- 个人头像 -->
-		<div class="profilePicture"><a href="#"><img src="${userPicture}"></a></div>
+		<div class="profilePicture"><a href="/personal"><img src="${userPicture}"></a></div>
 		<!-- 个人信息 -->
 		<div class="profileInfo">
 			<div class="profileName">${username}</div>

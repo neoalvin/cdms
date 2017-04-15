@@ -18,3 +18,18 @@ function logoutFromSystem(){
     });
 }
 
+
+function changePicture(){
+    BootstrapDialog.show({
+        title: "提示",
+        message: '确定修改头像？',
+        closable: false,
+        buttons : [{
+            label : "确认",
+            action : function(dialog){
+                dialog.close();
+            }
+        }]
+    });
+}
+

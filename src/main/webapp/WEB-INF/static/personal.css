@@ -1,0 +1,104 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}img{border:0}em,strong,th,b,i{font-style:normal;font-weight:400}ol,ul,dl{list-style:none}th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}input,textarea,select,button{font-family:inherit;font-size:inherit;font-weight:400}img,input,label,button{vertical-align:middle}input:focus,button:focus,select:focus,textarea:focus{outline:0}a::-moz-focus-inner,input::-moz-focus-inner,button::-moz-focus-inner{border:0}button::-moz-focus-inner,input::-moz-focus-inner{padding:0}ins,s,u,del{text-decoration:none}
+
+body{
+  background-color: #eee!important;
+}
+
+#pageHeader{
+  background: #222;
+  color: #fff;
+  height: 70px;
+}
+
+.headTitle{
+  float: left;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 28px;
+  color: #dadada;
+  line-height: 30px;
+}
+
+.headTitle a{
+  font-size: 28px;
+  color: #dadada;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.headTitle a:hover{
+  color: #fafafa;
+  text-decoration: none;
+}
+
+#personalContent{
+  width: 600px;
+  height: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ccc;
+}
+
+.personalPicture{
+  width: 100px;
+  height: 120px;
+  overflow: hidden;
+  margin: 0px auto;
+  padding-top: 20px;
+}
+
+.personalPicture img{
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.personalProfile{
+  width: 450px;
+  height: 320px;
+  padding-top: 15px;
+  margin: 20px auto;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+}
+
+.personalLabel{
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  margin-left: 40px;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+#inputUsername{
+  width: 200px;
+  margin-top: 20px;
+}
+
+#inputUserId{
+  width: 200px;
+  margin-top: 20px;
+}
+
+#inputUserType{
+  width: 200px;
+  margin-top: 20px;
+}
+
+#inputPassword{
+  width: 200px;
+  margin-top: 20px;
+}
+
+#saveSubmit{
+  width: 100px;
+  margin-left: 180px;
+  margin-top: 30px;
+}
