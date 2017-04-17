@@ -42,10 +42,9 @@
 	        <label for="inputPassword" class="registryLabel">密码<span>*</span></label>
 	        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="密码" required>
 	        <!-- 确认注册按钮 -->
-	        <button class="btn btn-primary" id="registrySubmit" type="submit">确认</button>
 	        <button class="btn btn-primary" id="returnBtn" type="button" onclick="window.location.href='/login'">返回</button>
-	        
-      	</form>
+					<button class="btn btn-primary" id="registrySubmit" type="submit">确认</button>
+				</form>
 	</div>
 </body>
 </html>

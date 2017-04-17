@@ -1,11 +1,14 @@
 package edu.hitwh.cdms.util;
 
 import edu.hitwh.cdms.model.RetCode;
+import edu.hitwh.cdms.model.StudentInfo;
+import edu.hitwh.cdms.model.TeacherInfo;
 import edu.hitwh.cdms.model.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sun.misc.BASE64Encoder;
 
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -53,5 +56,35 @@ public class UserInfoUtil {
       LOGGER.error("Check account info start, retCode " + retCode.toString());
     }
   }
+
+  /**
+   * 保存学生信息到session中
+   * @param session
+   * @param studentInfo
+   */
+  public static void saveStudentInfoInSession(HttpSession session, StudentInfo studentInfo){
+    session.setAttribute("userId", studentInfo.getStudentId());
+    session.setAttribute("username",studentInfo.getStudentName());
+    session.setAttribute("userPicture",studentInfo.getStudentPicture());
+    session.setAttribute("userType","学生");
+    session.setAttribute("userEmail",studentInfo.getStudentEmail());
+    session.setAttribute("userPhone",studentInfo.getStudentPhone());
+  }
+
+  /**
+   * 保存教师信息到session中
+   * @param session
+   * @param teacherInfo
+   */
+  public static void saveTeacherInfoInSession(HttpSession session, TeacherInfo teacherInfo){
+    session.setAttribute("userId", teacherInfo.getTeacherId());
+    session.setAttribute("username",teacherInfo.getTeacherName());
+    session.setAttribute("userPicture",teacherInfo.getTeacherPicture());
+    session.setAttribute("userType","教师");
+    session.setAttribute("userEmail",teacherInfo.getTeacherEmail());
+    session.setAttribute("userPhone",teacherInfo.getTeacherPhone());
+  }
+
+
 
 }

@@ -31,22 +31,21 @@ public class IndexController {
   public ModelAndView getIndex(HttpServletRequest request, HttpServletResponse response) throws IOException{
     //获取session
     HttpSession session = request.getSession();
+
     LOGGER.info("[IndexController]: Get into the homepage.userId= ", session.getAttribute("userId"));
 
     //定义视图
     ModelAndView mav = new ModelAndView();
 
     //若session中无用户信息，则用户未登录，跳转至登录页面
-    if((null == session.getAttribute("userId")) || "".equals(session.getAttribute("userId"))){
-      LOGGER.warn("[IndexController]: No user login.");
+    if((null == session.getAttribute("userId")) || ("".equals(session.getAttribute("userId")))){
+      LOGGER.warn("[IndexController]: No user information in session.");
       mav.setViewName("login");
       response.sendRedirect("login");
     }
     else{
       //返回主页视图，将用户信息置于session中
       mav.setViewName("index");
-      mav.addObject("userId", session.getAttribute("userId"));
-      mav.addObject("username", session.getAttribute("username"));
     }
     return mav;
   }

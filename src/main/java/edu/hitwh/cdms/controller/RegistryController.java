@@ -35,9 +35,14 @@ public class RegistryController {
   private static final Logger LOGGER = LoggerFactory.getLogger(RegistryController.class);
 
   /**
-   * 默认头像路径
+   * 学生默认头像路径
    */
-  private static final String PICTURE_DEFAULT_PATH = "images/user/default.jpg";
+  private static final String STUDENT_PICTURE_DEFAULT_PATH = "images/user/student/default.jpg";
+
+  /**
+   *
+   */
+  private static final String TEACHER_PICTURE_DEFAULT_PATH = "images/user/teacher/default.jpg";
 
   /**
    * 返回注册界面视图
@@ -90,7 +95,7 @@ public class RegistryController {
       //学生信息不存在
       else {
         //设置默认头像
-        studentInfo.setStudentPicture(PICTURE_DEFAULT_PATH);
+        studentInfo.setStudentPicture(STUDENT_PICTURE_DEFAULT_PATH);
         //添加学生信息到数据库
         studentService.addStudentInfo(studentInfo);
         LOGGER.info("[RegistryController]: Registry account successfully.");

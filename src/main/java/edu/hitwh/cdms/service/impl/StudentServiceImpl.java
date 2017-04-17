@@ -35,4 +35,12 @@ public class StudentServiceImpl implements StudentService {
   public void addStudentInfo(StudentInfo studentInfo) {
     studentInfoDao.addStudentInfo(studentInfo);
   }
+
+  /**
+   * 更新学生信息
+   * @param studentInfo
+   */
+  public void updateStudentInfo(StudentInfo studentInfo){
+    studentInfoDao.updateStudentInfo(studentInfo);
+  }
 }

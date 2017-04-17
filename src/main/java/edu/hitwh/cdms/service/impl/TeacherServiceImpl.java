@@ -26,4 +26,12 @@ public class TeacherServiceImpl implements TeacherService {
   public TeacherInfo selectTeacherById(String teacherId) {
     return teacherInfoDao.selectTeacherById(teacherId);
   }
+
+  /**
+   * 更新教师信息
+   * @param teacherInfo
+   */
+  public void updateTeacherInfo(TeacherInfo teacherInfo){
+    teacherInfoDao.updateTeacherInfo(teacherInfo);
+  }
 }

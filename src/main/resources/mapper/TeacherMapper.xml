@@ -15,4 +15,8 @@
   <select id="selectTeacherById" parameterType="String" resultMap="BaseResultMap">
     SELECT * FROM cdms_teacher_info WHERE teacher_id = #{teacherId}
   </select>
+  <!-- 更新学生信息 -->
+  <update id="updateTeacherInfo" parameterType="TeacherInfo">
+    update cdms_teacher_info set teacher_name=#{teacherName}, pwd_code=#{pwdCode}, teacher_email=#{teacherEmail}, teacher_phone=#{teacherPhone} where teacher_id=#{teacherId}
+  </update>
 </mapper>

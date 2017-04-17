@@ -9,4 +9,5 @@ import edu.hitwh.cdms.model.StudentInfo;
 public interface StudentService {
   StudentInfo selectStudentById(String studentId);
   void addStudentInfo(StudentInfo studentInfo);
+  void updateStudentInfo(StudentInfo studentInfo);
 }

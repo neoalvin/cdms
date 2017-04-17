@@ -112,10 +112,10 @@ body{
 #registrySubmit{
   width: 100px;
   float: left;
+  margin-left: 80px;
 }
 
 #returnBtn{
   width: 100px;
   float: left;
-  margin-left: 80px;
 }

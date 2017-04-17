@@ -12,6 +12,7 @@
   <script type="application/javascript" src="js/bootstrap.min.js"></script>
   <script type="application/javascript" src="js/bootstrap-dialog.js"></script>
   <script type="application/javascript" src="js/main.js"></script>
+  <script type="application/javascript" src="js/updateProfile.js"></script>
 </head>
 <body>
 <!-- 页首个人信息模块开始 -->
@@ -29,13 +30,17 @@
   <!-- 个人资料 -->
   <div class="personalProfile">
     <label for="inputUsername" class="personalLabel">姓名：</label>
-    <input type="text" id="inputUsername" class="form-control" name="username" value="${username}">
+    <input type="text" id="inputUsername" class="form-control" value="${username}">
     <label for="inputUserId" class="personalLabel">学号：</label>
-    <input type="text" id="inputUserId" class="form-control" name="userId" value="${userId}" disabled="disabled">
+    <input type="text" id="inputUserId" class="form-control" value="${userId}" disabled="disabled">
     <label for="inputUserType" class="personalLabel">类型：</label>
-    <input type="text" id="inputUserType" class="form-control" name="userType" value="${userType}" disabled="disabled">
+    <input type="text" id="inputUserType" class="form-control" value="${userType}" disabled="disabled">
+    <label for="inputEmail" class="personalLabel">邮箱：</label>
+    <input type="text" id="inputEmail" class="form-control" value="${userEmail}">
+    <label for="inputUsername" class="personalLabel">电话：</label>
+    <input type="text" id="inputPhone" class="form-control" value="${userPhone}">
     <label for="inputPassword" class="personalLabel">密码：</label>
-    <input type="password" id="inputPassword" class="form-control" name="password">
+    <input type="password" id="inputPassword" class="form-control">
     <button class="btn btn-primary" id="saveSubmit" name="saveProfile" type="submit">提交</button>
   </div>
 </div>

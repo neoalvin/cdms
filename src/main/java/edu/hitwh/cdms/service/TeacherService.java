@@ -13,4 +13,5 @@ public interface TeacherService {
    * @return
    */
   TeacherInfo selectTeacherById(String teacherId);
+  void updateTeacherInfo(TeacherInfo teacherInfo);
 }

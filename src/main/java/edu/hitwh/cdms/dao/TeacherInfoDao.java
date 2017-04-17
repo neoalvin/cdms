@@ -15,4 +15,5 @@ public interface TeacherInfoDao {
    * @return
    */
   public TeacherInfo selectTeacherById(String teacherId);
+  public void updateTeacherInfo(TeacherInfo teacherInfo);
 }

@@ -7,6 +7,7 @@ import edu.hitwh.cdms.model.UserInfo;
 import edu.hitwh.cdms.service.StudentService;
 import edu.hitwh.cdms.service.TeacherService;
 import edu.hitwh.cdms.util.CommonUtil;
+import edu.hitwh.cdms.util.UserInfoConstants;
 import edu.hitwh.cdms.util.UserInfoUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,13 +24,6 @@ public class LoginAccountValidator {
    * 定义日志对象
    */
   private static final Logger LOGGER = LoggerFactory.getLogger(LoginAccountValidator.class);
-
-  //学生用户
-  private static final String STUDENT = "student";
-
-  //教师用户
-  private static final String TEACHER = "teacher";
-
 
   /**
    * 校验用户信息格式
@@ -80,7 +74,7 @@ public class LoginAccountValidator {
     //获取用户类型
     String userType = userInfo.getUserType();
 
-    if(STUDENT.equals(userType)){
+    if(UserInfoConstants.STUDENT.equals(userType)){
       StudentInfo studentInfo = studentService.selectStudentById(userId);
       if(null == studentInfo){
         retCode.setCode("1");
@@ -94,13 +88,11 @@ public class LoginAccountValidator {
       }
       else{
         LOGGER.info("[LoginAccountValidator]: Get user information successfully. studentInfo= " + studentInfo.toString());
-        session.setAttribute("userId", userId);
-        session.setAttribute("username",studentInfo.getStudentName());
-        session.setAttribute("userPicture",studentInfo.getStudentPicture());
-        session.setAttribute("userType","学生");
+        //保存学生信息到session中
+        UserInfoUtil.saveStudentInfoInSession(session, studentInfo);
       }
     }
-    else if(TEACHER.equals(userType)){
+    else if(UserInfoConstants.TEACHER.equals(userType)){
       TeacherInfo teacherInfo = teacherService.selectTeacherById(userId);
       if(null == teacherInfo){
         retCode.setCode("1");
@@ -114,11 +106,14 @@ public class LoginAccountValidator {
       }
       else{
         LOGGER.info("[LoginAccountValidator]: Get user information successfully. teacherInfo= " + teacherInfo.toString());
-        session.setAttribute("userId", userId);
-        session.setAttribute("username",teacherInfo.getTeacherName());
-        session.setAttribute("userPicture",teacherInfo.getTeacherPicture());
-        session.setAttribute("userType","教师");
+        //保存教师信息到session中
+        UserInfoUtil.saveTeacherInfoInSession(session, teacherInfo);
       }
+    }
+    else{
+      LOGGER.error("[LoginAccountValidator]: User type is invalid. userType= " + userType);
+      retCode.setCode("1");
+      retCode.setMessage("用户类型无效！");
     }
     return retCode;
   }
