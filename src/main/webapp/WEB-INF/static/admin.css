@@ -1,0 +1,58 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}img{border:0}em,strong,th,b,i{font-style:normal;font-weight:400}ol,ul,dl{list-style:none}th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}input,textarea,select,button{font-family:inherit;font-size:inherit;font-weight:400}img,input,label,button{vertical-align:middle}input:focus,button:focus,select:focus,textarea:focus{outline:0}a::-moz-focus-inner,input::-moz-focus-inner,button::-moz-focus-inner{border:0}button::-moz-focus-inner,input::-moz-focus-inner{padding:0}ins,s,u,del{text-decoration:none}
+
+#pageHeader{
+  background: #222;
+  color: #fff;
+  height: 70px;
+}
+
+.headTitle{
+  float: left;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 28px;
+  color: #dadada;
+  line-height: 30px;
+}
+
+.adminTag{
+  float: right;
+  line-height: 30px;
+  margin-top: 30px;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.adminTag a{
+  font-size: 14px;
+  color: #dadada;
+  text-decoration: none;
+}
+.adminTag a:link{
+  color: #fafafa;
+  text-decoration: none;
+}
+.adminTag a:visited{
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.adminTag a:hover{
+  color: #fafafa;
+  text-decoration: none;
+}
+
+#adminSubmit{
+  width: 100px;
+  float: left;
+}
+
+#clearSubmit{
+  width: 100px;
+  float: left;
+  margin-left: 60px;
+}
+
+

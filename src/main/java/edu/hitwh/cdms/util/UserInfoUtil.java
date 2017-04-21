@@ -53,7 +53,7 @@ public class UserInfoUtil {
     if (CommonUtil.isStringEmpty(info)) {
       retCode.setCode("1");
       retCode.setMessage(param + "不能为空。");
-      LOGGER.error("Check account info start, retCode " + retCode.toString());
+      LOGGER.error("Check account info start, retCode = " + retCode.toString());
     }
   }
 

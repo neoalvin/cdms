@@ -23,8 +23,6 @@
 			<div class="profileName">${username}</div>
 			<div class="profileNo">${userId}</div>
 		</div>
-		<!-- 网站名称 -->
-		<!-- <div class="headTitle">高校课程设计评分系统</div> -->
 		<!-- 退出系统链接 -->
 		<div class="logoutLink"><a href="javascript:void(0)" onclick="logoutFromSystem()">退出系统</a></div>
 	</div>

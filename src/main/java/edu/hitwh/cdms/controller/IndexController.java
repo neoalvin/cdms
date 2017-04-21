@@ -27,12 +27,12 @@ public class IndexController {
    * 获取主页页面视图
    * @return
    */
-  @RequestMapping("/index")
+  @RequestMapping("/")
   public ModelAndView getIndex(HttpServletRequest request, HttpServletResponse response) throws IOException{
     //获取session
     HttpSession session = request.getSession();
 
-    LOGGER.info("[IndexController]: Get into the homepage.userId= ", session.getAttribute("userId"));
+    LOGGER.info("[IndexController]: Get into the homepage.userId = " + session.getAttribute("userId"));
 
     //定义视图
     ModelAndView mav = new ModelAndView();

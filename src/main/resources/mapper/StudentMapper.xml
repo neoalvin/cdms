@@ -21,6 +21,6 @@
 	</insert>
 	<!-- 更新学生信息 -->
 	<update id="updateStudentInfo" parameterType="StudentInfo">
-		update cdms_student_info set student_name=#{studentName}, pwd_code=#{pwdCode}, student_email=#{studentEmail}, student_phone=#{studentPhone} where student_id=#{studentId}
+		update cdms_student_info set pwd_code=#{pwdCode}, student_email=#{studentEmail}, student_phone=#{studentPhone} where student_id=#{studentId}
 	</update>
 </mapper>

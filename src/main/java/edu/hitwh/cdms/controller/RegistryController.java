@@ -70,14 +70,14 @@ public class RegistryController {
       if(null == studentInfo){
         retCode.setCode("1");
         retCode.setMessage("用户信息不能为空！");
-        LOGGER.error("[RegistryController]:  Registry account failed.retCode = " + retCode.toString());
+        LOGGER.error("[RegistryController]: Registry account failed.retCode = " + retCode.toString());
         return retCode;
       }
 
       //若传入必选参数为空，则注册失败
       retCode = RegistryAccountValidator.checkAccountInfo(studentInfo);
       if("1".equals(retCode.getCode())){
-        LOGGER.error("[RegistryController]:  Registry account failed.retCode = " + retCode.toString());
+        LOGGER.error("[RegistryController]: Registry account failed.retCode = " + retCode.toString());
         return retCode;
       }
 

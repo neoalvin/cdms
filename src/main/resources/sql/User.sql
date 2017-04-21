@@ -16,3 +16,9 @@ CREATE TABLE cdms_teacher_info(
   teacher_picture VARCHAR(100),
   pwd_code VARCHAR(64) NOT NULL);
 
+/*创建管理员信息表*/
+CREATE TABLE cdms_admin_info(
+  admin_id VARCHAR(16) PRIMARY KEY ,
+  pwd_code VARCHAR(64) NOT NULL
+);
+

@@ -30,7 +30,7 @@ public class LoginAccountValidator {
    * @return
    */
   public static RetCode checkLoginUserInfo(UserInfo userInfo){
-    LOGGER.info("[LoginAccountValidator]: Check user information start. userId= " + userInfo.getUserId() + ", userType= " + userInfo.getUserType());
+    LOGGER.info("[LoginAccountValidator]: Check user information start. userId = " + userInfo.getUserId() + ", userType = " + userInfo.getUserType());
 
     //定义返回信息对象
     RetCode retCode = new RetCode();
@@ -60,7 +60,7 @@ public class LoginAccountValidator {
    * @return
    */
   public static RetCode checkUserByIdAndPassword(TeacherService teacherService, StudentService studentService,UserInfo userInfo, HttpSession session){
-    LOGGER.info("[LoginAccountValidator]: Check user information start. userInfo= " + userInfo.toString());
+    LOGGER.info("[LoginAccountValidator]: Check user information start. userInfo = " + userInfo.toString());
 
     //定义返回信息对象
     RetCode retCode = new RetCode();
@@ -82,12 +82,12 @@ public class LoginAccountValidator {
       }
       else if(!(userPwd.equals(studentInfo.getPwdCode())))
       {
-        LOGGER.info("[LoginAccountValidator]: Get user information successfully. studentInfo= " + studentInfo.toString());
+        LOGGER.info("[LoginAccountValidator]: Get user information successfully. studentInfo = " + studentInfo.toString());
         retCode.setCode("1");
         retCode.setMessage("用户名或密码错误！");
       }
       else{
-        LOGGER.info("[LoginAccountValidator]: Get user information successfully. studentInfo= " + studentInfo.toString());
+        LOGGER.info("[LoginAccountValidator]: Get user information successfully. studentInfo = " + studentInfo.toString());
         //保存学生信息到session中
         UserInfoUtil.saveStudentInfoInSession(session, studentInfo);
       }
@@ -100,18 +100,18 @@ public class LoginAccountValidator {
       }
       else if(!(userPwd.equals(teacherInfo.getPwdCode())))
       {
-        LOGGER.info("[LoginAccountValidator]: Get user information successfully. teacherInfo= " + teacherInfo.toString());
+        LOGGER.info("[LoginAccountValidator]: Get user information successfully. teacherInfo = " + teacherInfo.toString());
         retCode.setCode("1");
         retCode.setMessage("用户名或密码错误！");
       }
       else{
-        LOGGER.info("[LoginAccountValidator]: Get user information successfully. teacherInfo= " + teacherInfo.toString());
+        LOGGER.info("[LoginAccountValidator]: Get user information successfully. teacherInfo = " + teacherInfo.toString());
         //保存教师信息到session中
         UserInfoUtil.saveTeacherInfoInSession(session, teacherInfo);
       }
     }
     else{
-      LOGGER.error("[LoginAccountValidator]: User type is invalid. userType= " + userType);
+      LOGGER.error("[LoginAccountValidator]: User type is invalid. userType = " + userType);
       retCode.setCode("1");
       retCode.setMessage("用户类型无效！");
     }

@@ -53,7 +53,7 @@ function loginUserRequest(userType) {
                         buttons : [{
                             label : "确认",
                             action : function(dialog){
-                                window.location.href = "/index";
+                                window.location.href = "/";
                                 dialog.close();
                             }
                         }]

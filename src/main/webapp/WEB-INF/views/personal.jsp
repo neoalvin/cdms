@@ -18,7 +18,7 @@
 <!-- 页首个人信息模块开始 -->
 <div id="pageHeader">
   <!-- 网站名称 -->
-  <div class="headTitle"><a href="/index">高校课程设计评分系统</a></div>
+  <div class="headTitle"><a href="/">高校课程设计评分系统</a></div>
   <!-- 退出系统链接 -->
   <div class="logoutLink"><a href="javascript:void(0)" onclick="logoutFromSystem()">退出系统</a></div>
 </div>
@@ -30,7 +30,7 @@
   <!-- 个人资料 -->
   <div class="personalProfile">
     <label for="inputUsername" class="personalLabel">姓名：</label>
-    <input type="text" id="inputUsername" class="form-control" value="${username}">
+    <input type="text" id="inputUsername" class="form-control" value="${username}" disabled="disabled">
     <label for="inputUserId" class="personalLabel">学号：</label>
     <input type="text" id="inputUserId" class="form-control" value="${userId}" disabled="disabled">
     <label for="inputUserType" class="personalLabel">类型：</label>
@@ -40,7 +40,7 @@
     <label for="inputUsername" class="personalLabel">电话：</label>
     <input type="text" id="inputPhone" class="form-control" value="${userPhone}">
     <label for="inputPassword" class="personalLabel">密码：</label>
-    <input type="password" id="inputPassword" class="form-control">
+    <input type="password" id="inputPassword" class="form-control" placeholder="*****">
     <button class="btn btn-primary" id="saveSubmit" name="saveProfile" type="submit">提交</button>
   </div>
 </div>

@@ -1,9 +1,7 @@
 package edu.hitwh.cdms.validator;
 
-import edu.hitwh.cdms.model.RetCode;
-import edu.hitwh.cdms.model.StudentInfo;
-import edu.hitwh.cdms.model.TeacherInfo;
-import edu.hitwh.cdms.model.UserInfo;
+import edu.hitwh.cdms.model.*;
+import edu.hitwh.cdms.service.AdminService;
 import edu.hitwh.cdms.service.StudentService;
 import edu.hitwh.cdms.service.TeacherService;
 import edu.hitwh.cdms.util.CommonUtil;
@@ -37,18 +35,10 @@ public class PersonalProfileValidator {
    */
   public static RetCode checkPersonalProfile(TeacherService teacherService, StudentService studentService, UserInfo userInfo, HttpSession session){
     //打印入口日志
-    LOGGER.info("[PersonalProfileValidator]: start to check the personal profile. userId=" + userInfo.getUserId());
+    LOGGER.info("[PersonalProfileValidator]: start to check the personal profile. userId = " + userInfo.getUserId());
 
     //定义返回信息对象
     RetCode retCode = new RetCode();
-
-    //校验传入用户信息对象是否为空
-    if(null == userInfo){
-      retCode.setCode("1");
-      retCode.setMessage("传入信息为空！");
-      return retCode;
-    }
-
 
     //获取用户信息
     String userId = userInfo.getUserId();
@@ -62,7 +52,7 @@ public class PersonalProfileValidator {
       if (UserInfoConstants.STUDENT.equals(userType)) {
         //获取原本的学生信息
         StudentInfo studentInfo = studentService.selectStudentById(userId);
-        LOGGER.info("[PersonalProfileValidator]: Get student information successfully.studentInfo=" + studentInfo.toString());
+        LOGGER.info("[PersonalProfileValidator]: Get student information successfully.studentInfo = " + studentInfo.toString());
 
         //设置新的用户信息
         studentInfo.setStudentName(username);
@@ -86,7 +76,7 @@ public class PersonalProfileValidator {
       } else if (UserInfoConstants.TEACHER.equals(userType)) {
         //获取原来的教师信息
         TeacherInfo teacherInfo = teacherService.selectTeacherById(userId);
-        LOGGER.info("[PersonalProfileValidator]: Get student information successfully.studentInfo=" + teacherInfo.toString());
+        LOGGER.info("[PersonalProfileValidator]: Get student information successfully.studentInfo = " + teacherInfo.toString());
 
         teacherInfo.setTeacherName(username);
         teacherInfo.setTeacherEmail(userEmail);
@@ -106,7 +96,7 @@ public class PersonalProfileValidator {
         teacherService.updateTeacherInfo(teacherInfo);
 
       } else {
-        LOGGER.error("[PersonalProfileValidator]: User type is invalid. userType= " + userType);
+        LOGGER.error("[PersonalProfileValidator]: User type is invalid. userType = " + userType);
         retCode.setCode("1");
         retCode.setMessage("用户类型无效！");
       }
@@ -117,6 +107,31 @@ public class PersonalProfileValidator {
       retCode.setMessage(e.getMessage());
     }
 
+    return retCode;
+  }
+
+  /**
+   * 更新管理员信息
+   * @param adminService
+   * @param adminInfo
+   * @return
+   */
+  public static RetCode checkAndUpdateAdminProfile(AdminService adminService, AdminInfo adminInfo){
+    //打印入口日志
+    LOGGER.info("[PersonalProfileValidator]: start to check the admin profile. userId = " + adminInfo.getAdminId());
+
+
+    //定义返回信息对象
+    RetCode retCode = new RetCode();
+
+    //更新管理员信息
+    try{
+      adminService.updateAdminInfo(adminInfo);
+    }
+    catch(Exception e){
+      retCode.setCode("1");
+      retCode.setMessage("更新管理员信息失败：" + e.toString());
+    }
     return retCode;
   }
 }

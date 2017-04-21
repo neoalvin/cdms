@@ -97,7 +97,7 @@ public class LoginController{
         LOGGER.info("[LoginController]: Login account successfully. userId in session: " + session.getAttribute("userId"));
       }
       else{
-        LOGGER.error("[LoginController]: Login account failed.retCode= " + retCode.toString());
+        LOGGER.error("[LoginController]: Login account failed.retCode = " + retCode.toString());
       }
     }
     catch (Exception e){

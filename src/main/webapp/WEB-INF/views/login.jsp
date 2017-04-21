@@ -20,6 +20,8 @@
 		<div class="headTitle">高校课程设计评分系统</div>
 		<!-- 用户注册链接 -->
 		<div class="userRegistry"><a href="/registry">用户注册</a></div>
+		<!-- 用户注册链接 -->
+		<div class="adminLink"><a href="/loginAdmin">管理员入口</a></div>
 	</div>
 	<!-- 登录页面主要内容开始 -->
 	<div id="loginContent">

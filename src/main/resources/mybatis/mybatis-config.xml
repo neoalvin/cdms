@@ -6,5 +6,6 @@
   <typeAliases>
     <typeAlias alias="StudentInfo" type="edu.hitwh.cdms.model.StudentInfo" />
     <typeAlias alias="TeacherInfo" type="edu.hitwh.cdms.model.TeacherInfo" />
+    <typeAlias alias="AdminInfo" type="edu.hitwh.cdms.model.AdminInfo" />
   </typeAliases>
 </configuration>

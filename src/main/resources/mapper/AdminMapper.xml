@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.hitwh.cdms.dao.AdminInfoDao">
+  <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
+  <resultMap id="BaseResultMap" type="edu.hitwh.cdms.model.AdminInfo">
+    <id column="admin_id" property="adminId" jdbcType="CHAR" />
+    <result column="pwd_code" property="pwdCode" jdbcType="CHAR" />
+  </resultMap>
+  <!-- 查询单条记录 -->
+  <select id="selectAdminInfoById" parameterType="String" resultMap="BaseResultMap">
+    SELECT * FROM cdms_admin_info WHERE admin_id = #{adminId}
+  </select>
+  <!-- 更新学生信息 -->
+  <update id="updateAdminInfo" parameterType="AdminInfo">
+    update cdms_admin_info set pwd_code=#{pwdCode} where admin_id=#{adminId}
+  </update>
+</mapper>
