@@ -6,6 +6,7 @@
 	<resultMap id="BaseResultMap" type="edu.hitwh.cdms.model.StudentInfo">
 		<id column="student_id" property="studentId" jdbcType="CHAR" />
 		<result column="student_name" property="studentName" jdbcType="CHAR" />
+		<result column="student_class" property="studentClass" jdbcType="CHAR" />
 		<result column="student_email" property="studentEmail" jdbcType="CHAR" />
 		<result column="student_phone" property="studentPhone" jdbcType="CHAR" />
 		<result column="student_picture" property="studentPicture" jdbcType="CHAR" />
@@ -15,12 +16,16 @@
 	<select id="selectStudentById" parameterType="String" resultMap="BaseResultMap">
 		SELECT * FROM cdms_student_info WHERE student_id = #{studentId}
 	</select>
+	<!-- 查询所有学生记录 -->
+	<select id="selectAllStudentInfo" resultMap="BaseResultMap">
+		SELECT * FROM cdms_student_info
+	</select>
 	<!-- 添加学生信息 -->
 	<insert id="addStudentInfo" parameterType="StudentInfo">
-		insert into cdms_student_info values(#{studentId},#{studentName},#{studentEmail},#{studentPhone},#{studentPicture},#{pwdCode})
+		insert into cdms_student_info values(#{studentId},#{studentName},#{studentClass},#{studentEmail},#{studentPhone},#{studentPicture},#{pwdCode})
 	</insert>
 	<!-- 更新学生信息 -->
 	<update id="updateStudentInfo" parameterType="StudentInfo">
-		update cdms_student_info set pwd_code=#{pwdCode}, student_email=#{studentEmail}, student_phone=#{studentPhone} where student_id=#{studentId}
+		update cdms_student_info set pwd_code=#{pwdCode}, student_email=#{studentEmail}, student_phone=#{studentPhone}, student_class=#{studentClass} where student_id=#{studentId}
 	</update>
 </mapper>

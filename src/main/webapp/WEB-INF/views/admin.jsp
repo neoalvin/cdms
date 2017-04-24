@@ -18,6 +18,7 @@
   <!-- 自定义 -->
   <link rel="stylesheet" type="text/css" href="static/admin.css">
   <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link rel="stylesheet" type="text/css" href="static/user_management.css">
   <script type="application/javascript" src="js/admin.js"></script>
 </head>
 <body>
@@ -36,8 +37,8 @@
   <!-- 左侧导航栏开始 -->
   <div id="navigationModule">
     <ul>
-      <li><a href="/admin/studentManagement">学生管理</a></li>
-      <li><a href="/admin/teacherManagement">教师管理</a></li>
+      <li><a href="/admin/studentInfoManagement">学生管理</a></li>
+      <li><a href="/admin/teacherInfoManagement">教师管理</a></li>
       <li><a href="/admin/statistic">统计报表</a></li>
     </ul>
   </div>

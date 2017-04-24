@@ -15,4 +15,14 @@ public class UserInfoConstants {
    * 教师用户
    */
   public static final String TEACHER = "teacher";
+
+  /**
+   * 学生用户
+   */
+  public static final String STUDENT_ZH = "学生";
+
+  /**
+   * 教师用户
+   */
+  public static final String TEACHER_ZH = "教师";
 }

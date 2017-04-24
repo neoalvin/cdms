@@ -18,6 +18,11 @@ public class StudentInfo {
   private String studentName;
 
   /**
+   * 班级
+   */
+  private String studentClass;
+
+  /**
    * 邮箱
    */
   private String studentEmail;
@@ -51,6 +56,14 @@ public class StudentInfo {
 
   public void setStudentName(String studentName) {
     this.studentName = studentName;
+  }
+
+  public String getStudentClass() {
+    return studentClass;
+  }
+
+  public void setStudentClass(String studentClass) {
+    this.studentClass = studentClass;
   }
 
   public String getStudentEmail() {
@@ -90,6 +103,7 @@ public class StudentInfo {
     return "StudentInfo{" +
         "studentId='" + studentId + '\'' +
         ", studentName='" + studentName + '\'' +
+        ", studentClass='" + studentClass + '\'' +
         ", studentEmail='" + studentEmail + '\'' +
         ", studentPhone='" + studentPhone + '\'' +
         ", studentPicture='" + studentPicture + '\'' +

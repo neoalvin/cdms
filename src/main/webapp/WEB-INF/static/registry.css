@@ -50,24 +50,24 @@ body{
 
 #registryContent{
   width: 600px;
-  height: 450px;
-  margin: 60px auto;
+  height: 500px;
+  margin: 40px auto;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 0 20px #ccc;
 }
 
 .registryHeadLabel{
-	font-size: 20px;
-	font-weight: bold;
-	padding-top: 20px;
-	text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .registryForm{
   width: 400px;
   margin-left: 100px;
-  padding-top: 40px;
+  padding-top: 30px;
   padding-left: 50px;
 }
 
@@ -90,6 +90,11 @@ body{
 }
 
 #inputUsername{
+  width: 200px;
+  margin-bottom: 25px;
+}
+
+#inputUserClass{
   width: 200px;
   margin-bottom: 25px;
 }

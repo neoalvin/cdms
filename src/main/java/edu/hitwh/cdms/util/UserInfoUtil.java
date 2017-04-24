@@ -85,6 +85,4 @@ public class UserInfoUtil {
     session.setAttribute("userPhone",teacherInfo.getTeacherPhone());
   }
 
-
-
 }

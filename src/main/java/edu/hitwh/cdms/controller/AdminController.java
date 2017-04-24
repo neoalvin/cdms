@@ -2,7 +2,11 @@ package edu.hitwh.cdms.controller;
 
 import edu.hitwh.cdms.model.AdminInfo;
 import edu.hitwh.cdms.model.RetCode;
+import edu.hitwh.cdms.model.StudentInfo;
+import edu.hitwh.cdms.model.TeacherInfo;
 import edu.hitwh.cdms.service.AdminService;
+import edu.hitwh.cdms.service.StudentService;
+import edu.hitwh.cdms.service.TeacherService;
 import edu.hitwh.cdms.util.CommonUtil;
 import edu.hitwh.cdms.util.UserInfoUtil;
 import edu.hitwh.cdms.validator.LoginAdminValidator;
@@ -17,6 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 管理员Controller类
@@ -35,6 +41,18 @@ public class AdminController {
    */
   @Resource
   AdminService adminService;
+
+  /**
+   * 学生信息操作对象
+   */
+  @Resource
+  StudentService studentService;
+
+  /**
+   * 教师信息操作对象
+   */
+  @Resource
+  TeacherService teacherService;
 
   /**
    * 返回管理员视图
@@ -78,8 +96,7 @@ public class AdminController {
     //打印入口日志
     LOGGER.info("[AdminController]: Switch admin page.moduleName = " + moduleName);
 
-    //校验入参
-
+    //TODO 校验入参
 
     //获取session
     HttpSession session = request.getSession();
@@ -150,5 +167,19 @@ public class AdminController {
 
     //跳转至登录页面
     response.sendRedirect("/loginAdmin");
+  }
+
+  @RequestMapping(value = "/userInfo/student/page", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
+  public @ResponseBody List<StudentInfo> selectAllStudentInfo(@RequestParam("order") String order){
+    LOGGER.info("[AdminController]: Start to select all student information.");
+    List<StudentInfo> studentInfoList = studentService.selectAllStudentInfo();
+    return studentInfoList;
+  }
+
+  @RequestMapping(value = "/userInfo/teacher/page", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
+  public @ResponseBody List<TeacherInfo> selectAllTeacherInfo(@RequestParam("order") String order){
+    LOGGER.info("[AdminController]: Start to select all teacher information.");
+    List<TeacherInfo> teacherInfoList = teacherService.selectAllTeacherInfo();
+    return teacherInfoList;
   }
 }

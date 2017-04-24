@@ -14,8 +14,8 @@ var TableInit = function () {
     var oTableInit = new Object();
     //初始化Table
     oTableInit.Init = function () {
-        $('#students_info_table').bootstrapTable({
-            url: '/userInfo/student/page',
+        $('#teachers_info_table').bootstrapTable({
+            url: '/userInfo/teacher/page',
             method: 'get',                      //请求方式（*）
             toolbar: '#toolbar',                //工具按钮用哪个容器
             striped: true,                      //是否显示行间隔色
@@ -28,23 +28,20 @@ var TableInit = function () {
             search: true,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
             clickToSelect: true,                //是否启用点击选中行
             height: 400,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-            uniqueId: "studentId",              //每一行的唯一标识，一般为主键列
+            uniqueId: "teacherId",              //每一行的唯一标识，一般为主键列
             columns: [{
                 checkbox: true
             }, {
-                field: 'studentName',
+                field: 'teacherName',
                 title: '姓名'
             }, {
-                field: 'studentId',
-                title: '学号'
-            },  {
-                field: 'studentClass',
-                title: '班级'
+                field: 'teacherId',
+                title: '工号'
             }, {
-                field: 'studentEmail',
+                field: 'teacherEmail',
                 title: '邮箱'
             },{
-                field: 'studentPhone',
+                field: 'teacherPhone',
                 title: '电话'
             }]
         });
@@ -65,12 +62,12 @@ var ButtonInit = function () {
     return oInit;
 };
 
-function addStudentInfo(){
-    $("#myModalLabel").html("添加学生信息");
-    $("#editStudentInfo").modal("show");
+function addTeacherInfo(){
+    $("#myModalLabel").html("添加教师信息");
+    $("#editTeacherInfo").modal("show");
 }
 
-function updateStudentInfo(){
-    $("#myModalLabel").html("修改学生信息");
-    $("#editStudentInfo").modal("show");
+function updateTeacherInfo(){
+    $("#myModalLabel").html("修改教师信息");
+    $("#editTeacherInfo").modal("show");
 }

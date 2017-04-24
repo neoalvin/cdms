@@ -3,6 +3,8 @@ package edu.hitwh.cdms.dao;
 import edu.hitwh.cdms.model.TeacherInfo;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * 教师信息Dao层接口
  * Created by alvin on 2017/4/5.
@@ -16,4 +18,5 @@ public interface TeacherInfoDao {
    */
   public TeacherInfo selectTeacherById(String teacherId);
   public void updateTeacherInfo(TeacherInfo teacherInfo);
+  public List<TeacherInfo> selectAllTeacherInfo();
 }

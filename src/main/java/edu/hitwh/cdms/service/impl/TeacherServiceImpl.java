@@ -6,6 +6,7 @@ import edu.hitwh.cdms.service.TeacherService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 教师信息操作实现类
@@ -33,5 +34,13 @@ public class TeacherServiceImpl implements TeacherService {
    */
   public void updateTeacherInfo(TeacherInfo teacherInfo){
     teacherInfoDao.updateTeacherInfo(teacherInfo);
+  }
+
+  /**
+   * 查询所有教师信息
+   * @return
+   */
+  public List<TeacherInfo> selectAllTeacherInfo() {
+    return teacherInfoDao.selectAllTeacherInfo();
   }
 }

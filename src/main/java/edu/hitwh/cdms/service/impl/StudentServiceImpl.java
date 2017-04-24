@@ -2,10 +2,12 @@ package edu.hitwh.cdms.service.impl;
 
 import edu.hitwh.cdms.dao.StudentInfoDao;
 import edu.hitwh.cdms.model.StudentInfo;
+import edu.hitwh.cdms.model.UserInfo;
 import edu.hitwh.cdms.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * StudentService实现类
@@ -42,5 +44,13 @@ public class StudentServiceImpl implements StudentService {
    */
   public void updateStudentInfo(StudentInfo studentInfo){
     studentInfoDao.updateStudentInfo(studentInfo);
+  }
+
+  /**
+   * 查询所有学生信息
+   * @return
+   */
+  public List<StudentInfo> selectAllStudentInfo() {
+    return studentInfoDao.selectAllStudentInfo();
   }
 }

@@ -3,6 +3,6 @@
 <head>
 </head>
 <body>
-  <h1>教师管理</h1>
+  <h4>学生选课</h4>
 </body>
 </html>

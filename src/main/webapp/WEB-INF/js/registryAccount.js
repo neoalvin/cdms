@@ -5,6 +5,7 @@ $(document).ready(
                 //获取用户注册信息
                 var userId = $("#inputUserId").val();
                 var username = $("#inputUsername").val();
+                var userClass = $("#inputUserClass").val();
                 var userEmail = $("#inputUserEmail").val();
                 var userPhone = $("#inputPhone").val();
                 var password = $("#inputPassword").val();
@@ -17,6 +18,7 @@ $(document).ready(
                 var data = {
                     "studentId": userId,
                     "studentName": username,
+                    "userClass": userClass,
                     "studentEmail": userEmail,
                     "studentPhone": userPhone,
                     "pwdCode": password

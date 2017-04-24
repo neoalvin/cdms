@@ -32,7 +32,10 @@
 	        <!-- 真实姓名 -->
 	        <label for="inputUsername" class="registryLabel">真实姓名<span>*</span></label>
 	        <input type="text" id="inputUsername" name="username" class="form-control" placeholder="真实姓名" required>
-	        <!-- 邮箱 -->
+					<!-- 班级 -->
+					<label for="inputUserClass" class="registryLabel">班级<span>*</span></label>
+					<input type="text" id="inputUserClass" name="userClass" class="form-control" placeholder="班级" required>
+					<!-- 邮箱 -->
 	        <label for="inputUserEmail" class="registryLabel">邮箱</label>
 	        <input type="email" id="inputUserEmail" name="userEmail" class="form-control" placeholder="邮箱">
 					<!-- 真实姓名 -->

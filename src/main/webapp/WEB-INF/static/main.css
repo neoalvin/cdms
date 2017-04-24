@@ -1,5 +1,9 @@
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}img{border:0}em,strong,th,b,i{font-style:normal;font-weight:400}ol,ul,dl{list-style:none}th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}input,textarea,select,button{font-family:inherit;font-size:inherit;font-weight:400}img,input,label,button{vertical-align:middle}input:focus,button:focus,select:focus,textarea:focus{outline:0}a::-moz-focus-inner,input::-moz-focus-inner,button::-moz-focus-inner{border:0}button::-moz-focus-inner,input::-moz-focus-inner{padding:0}ins,s,u,del{text-decoration:none}
 
+body{
+	background: #eee!important;
+}
+
 #profileModule{
 	background: #222;
 	color: #fff;
@@ -8,7 +12,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:
 
 #mainContent{
 	height: 540px;
-	background: #fff;
+	background: #eee;
 }
 
 #navigationModule{
@@ -17,7 +21,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:
 	margin-top: 20px;
 	margin-left: 20px;
 	float: left;
-	background: #eee;
+	background: #fff;
 	border-radius: 10px;
 }
 
@@ -27,7 +31,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:
 	margin-top: 20px;
 	margin-right: 20px;
 	float: right;
-	background: #eee;
+	background: #fff;
 	border-radius: 10px;
 }
 

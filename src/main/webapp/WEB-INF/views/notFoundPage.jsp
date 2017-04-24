@@ -3,6 +3,6 @@
 <head>
 </head>
 <body>
-  <h4>学生管理</h4>
+  <h4>404 NOT FOUND.</h4>
 </body>
 </html>
