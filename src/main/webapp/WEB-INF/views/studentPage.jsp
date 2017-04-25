@@ -11,6 +11,8 @@
   <script type="application/javascript" src="js/bootstrap.min.js"></script>
   <script type="application/javascript" src="js/bootstrap-dialog.js"></script>
   <script type="application/javascript" src="js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/user_management.css">
+  <link rel="stylesheet" type="text/css" href="static/registry.css">
 </head>
 <body>
 <!-- 页首个人信息模块开始 -->
@@ -31,8 +33,9 @@
   <!-- 左侧导航栏开始 -->
   <div id="navigationModule">
     <ul>
-      <li><a href="#">课设选题</a></li>
-      <li><a href="#">分组管理</a></li>
+      <li><a href="/studentPage/studentCourcesManagement">课设选题</a></li>
+      <li><a href="/studentPage/studentScores">查看成绩</a></li>
+      <li><a href="/studentPage/studentProcess">课设进度</a></li>
       <li><a href="/personal">个人信息</a></li>
     </ul>
   </div>
