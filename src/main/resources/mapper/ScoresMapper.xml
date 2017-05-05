@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.hitwh.cdms.dao.ScoresInfoDao">
+<!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
+	<resultMap id="BaseResultMap" type="edu.hitwh.cdms.model.ScoresInfo">
+		<id column="student_id" property="studentId" jdbcType="CHAR" />
+		<result column="student_name" property="studentName" jdbcType="CHAR" />
+		<result column="student_class" property="studentClass" jdbcType="CHAR" />
+		<result column="course_name" property="courseName" jdbcType="CHAR" />
+		<result column="score_usual" property="scoreUsual" jdbcType="INTEGER" />
+		<result column="score_middle" property="scoreMiddle" jdbcType="INTEGER" />
+		<result column="score_last" property="scoreLast" jdbcType="INTEGER" />
+		<result column="score_summary" property="scoreSummary" jdbcType="INTEGER" />
+	</resultMap>
+	<select id="selectAllScoresInfo" resultMap="BaseResultMap">
+		SELECT * FROM cdms_scores_info;
+	</select>
+</mapper>

@@ -28,4 +28,7 @@
 	<update id="updateStudentInfo" parameterType="StudentInfo">
 		update cdms_student_info set pwd_code=#{pwdCode}, student_email=#{studentEmail}, student_phone=#{studentPhone}, student_class=#{studentClass} where student_id=#{studentId}
 	</update>
+	<delete id="deleteStudentInfo" parameterType="String">
+        delete from cdms_student_info student_id = #{studentId};
+    </delete>
 </mapper>

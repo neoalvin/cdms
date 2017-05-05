@@ -15,12 +15,18 @@
   <select id="selectTeacherById" parameterType="String" resultMap="BaseResultMap">
     SELECT * FROM cdms_teacher_info WHERE teacher_id = #{teacherId}
   </select>
-  <!-- 查询所有学生信息 -->
+  <!-- 查询所有信息 -->
   <select id="selectAllTeacherInfo" resultMap="BaseResultMap">
     SELECT * FROM cdms_teacher_info;
   </select>
-  <!-- 更新学生信息 -->
+  <!-- 更新信息 -->
   <update id="updateTeacherInfo" parameterType="TeacherInfo">
     update cdms_teacher_info set teacher_name=#{teacherName}, pwd_code=#{pwdCode}, teacher_email=#{teacherEmail}, teacher_phone=#{teacherPhone} where teacher_id=#{teacherId}
   </update>
+  <insert id="addTeacherInfo" parameterType="TeacherInfo">
+	insert into cdms_teacher_info values(#{teacherId},#{teacherName},#{teacherEmail},#{teacherPhone},#{teacherPicture},#{pwdCode})
+  </insert>
+  <delete id="deleteTeacherInfo" parameterType="String">
+        delete from cdms_teacher_info teacher_id = #{teacherId};
+  </delete>
 </mapper>

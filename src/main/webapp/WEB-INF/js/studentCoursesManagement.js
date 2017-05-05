@@ -10,6 +10,7 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#courses_info_table').bootstrapTable({
+        	url: "/courses/page",
         	height: 400,  
             columns: [{
                 checkbox: true

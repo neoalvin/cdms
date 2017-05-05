@@ -15,7 +15,8 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#score_info_table').bootstrapTable({
-            height: 400,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            url: "/scores/page",
+        	height: 400,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
             columns: [{
                 checkbox: true
             }, {
@@ -28,7 +29,7 @@ var TableInit = function () {
                 field: 'studentClass',
                 title: '班级'
             }, {
-                field: 'courseTitle',
+                field: 'courseName',
                 title: '课设题目'
             },{
                 field: 'scoreUsual',

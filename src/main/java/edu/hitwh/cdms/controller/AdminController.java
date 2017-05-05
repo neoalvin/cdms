@@ -1,6 +1,8 @@
 package edu.hitwh.cdms.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -61,8 +63,18 @@ public class AdminController {
 	TeacherService teacherService;
 
 	/**
+	 * 学生默认头像路径
+	 */
+	private static final String STUDENT_PICTURE_DEFAULT_PATH = "images/user/student/default.jpg";
+
+	/**
+	 * 教师默认头像
+	 */
+	private static final String TEACHER_PICTURE_DEFAULT_PATH = "images/user/teacher/default.jpg";
+
+	/**
 	 * 返回管理员视图
-	 * 
+	 *
 	 * @return
 	 */
 	@RequestMapping("/admin")
@@ -121,7 +133,7 @@ public class AdminController {
 
 	/**
 	 * 返回管理员登录视图
-	 * 
+	 *
 	 * @return
 	 */
 	@RequestMapping("/loginAdmin")
@@ -134,7 +146,7 @@ public class AdminController {
 
 	/**
 	 * 管理员登录
-	 * 
+	 *
 	 * @param adminInfo
 	 * @return
 	 */
@@ -176,7 +188,7 @@ public class AdminController {
 
 	/**
 	 * 管理员注销
-	 * 
+	 *
 	 * @param request
 	 * @param response
 	 */
@@ -191,6 +203,8 @@ public class AdminController {
 		response.sendRedirect("/loginAdmin");
 	}
 
+	/** ==========================学生信息操作============================= **/
+
 	@RequestMapping(value = "/userInfo/student/page", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
 	public @ResponseBody List<StudentInfo> selectAllStudentInfo(
 			@RequestParam("order") String order) {
@@ -201,6 +215,23 @@ public class AdminController {
 		return studentInfoList;
 	}
 
+	@RequestMapping(value = "/userInfo/student/add", method = RequestMethod.POST, consumes = "application/json")
+	public @ResponseBody void addStudentInfo(
+			@RequestBody StudentInfo studentInfo)
+			throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		studentInfo.setPwdCode(UserInfoUtil.EncoderByMd5("1234"));
+		studentInfo.setStudentPicture(STUDENT_PICTURE_DEFAULT_PATH);
+		studentService.addStudentInfo(studentInfo);
+	}
+
+	@RequestMapping(value = "/userInfo/student/update", method = RequestMethod.POST, consumes = "application/json")
+	public @ResponseBody void updateStudentInfo(
+			@RequestBody StudentInfo studentInfo) {
+		studentService.updateStudentInfo(studentInfo);
+	}
+
+	/** ==========================教师信息操作============================= **/
+
 	@RequestMapping(value = "/userInfo/teacher/page", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
 	public @ResponseBody List<TeacherInfo> selectAllTeacherInfo(
 			@RequestParam("order") String order) {
@@ -210,4 +241,20 @@ public class AdminController {
 				.selectAllTeacherInfo();
 		return teacherInfoList;
 	}
+
+	@RequestMapping(value = "/userInfo/teacher/add", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	public @ResponseBody void addTeacherInfo(
+			@RequestBody TeacherInfo teacherInfo)
+			throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		teacherInfo.setPwdCode(UserInfoUtil.EncoderByMd5("1234"));
+		teacherInfo.setTeacherPicture(TEACHER_PICTURE_DEFAULT_PATH);
+		teacherService.addTeacherInfo(teacherInfo);
+	}
+
+	@RequestMapping(value = "/userInfo/teacher/update", method = RequestMethod.POST, consumes = "application/json")
+	public @ResponseBody void updateTeacherInfo(
+			@RequestBody TeacherInfo teacherInfo) {
+		teacherService.updateTeacherInfo(teacherInfo);
+	}
+
 }

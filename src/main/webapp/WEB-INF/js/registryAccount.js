@@ -18,7 +18,7 @@ $(document).ready(
                 var data = {
                     "studentId": userId,
                     "studentName": username,
-                    "userClass": userClass,
+                    "studentClass": userClass,
                     "studentEmail": userEmail,
                     "studentPhone": userPhone,
                     "pwdCode": password

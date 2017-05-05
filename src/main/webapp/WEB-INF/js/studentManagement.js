@@ -3,11 +3,6 @@ $(function () {
     //1.初始化Table
     var oTable = new TableInit();
     oTable.Init();
-
-    //2.初始化Button的点击事件
-    var oButtonInit = new ButtonInit();
-    oButtonInit.Init();
-
 });
 
 var TableInit = function () {
@@ -53,17 +48,6 @@ var TableInit = function () {
     return oTableInit;
 };
 
-
-var ButtonInit = function () {
-    var oInit = new Object();
-    var postdata = {};
-
-    oInit.Init = function () {
-        //初始化页面上面的按钮事件
-    };
-
-    return oInit;
-};
 
 function addStudentInfo(){
     $("#myModalLabel").html("添加学生信息");

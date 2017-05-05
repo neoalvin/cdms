@@ -1,7 +1,9 @@
 package edu.hitwh.cdms.controller;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,8 +13,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.hitwh.cdms.model.CoursesInfo;
+import edu.hitwh.cdms.model.ScoresInfo;
+import edu.hitwh.cdms.service.CoursesService;
+import edu.hitwh.cdms.service.ScoresService;
 import edu.hitwh.cdms.util.UserInfoConstants;
 
 /**
@@ -26,6 +35,12 @@ public class IndexController {
 	 */
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(IndexController.class);
+
+	@Resource
+	CoursesService coursesService;
+
+	@Resource
+	ScoresService scoresService;
 
 	/**
 	 * 获取主页页面视图
@@ -127,6 +142,25 @@ public class IndexController {
 
 		// 刷新当前页
 		response.sendRedirect("/");
+	}
+
+	@RequestMapping(value = "/courses/page", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
+	public @ResponseBody List<CoursesInfo> selectAllCoursesInfo(
+			@RequestParam("order") String order) {
+		LOGGER.info(
+				"[IndexController]: Start to select all courses information.");
+		List<CoursesInfo> coursesInfoList = coursesService
+				.selectAllCoursesInfo();
+		return coursesInfoList;
+	}
+
+	@RequestMapping(value = "/scores/page", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
+	public @ResponseBody List<ScoresInfo> selectAllScoresInfo(
+			@RequestParam("order") String order) {
+		LOGGER.info(
+				"[IndexController]: Start to select all scores information.");
+		List<ScoresInfo> scoresInfoList = scoresService.selectAllScoresInfo();
+		return scoresInfoList;
 	}
 
 }
